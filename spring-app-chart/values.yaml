@@ -1,0 +1,20 @@
+image:
+  repository: springboot
+  tag: 4.0.5
+  pullPolicy: IfNotPresent
+
+env:
+  - name: SPRING_DATASOURCE_URL
+    value: jdbc:mysql://mysql-gopish.mysql.svc.cluster.local:3306/spring_boot_crud
+  - name: SPRING_DATASOURCE_USERNAME
+    value: root
+  - name: SPRING_DATASOURCE_PASSWORD
+    value: root 
+
+serviceAccount:
+  create: false
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 8080
