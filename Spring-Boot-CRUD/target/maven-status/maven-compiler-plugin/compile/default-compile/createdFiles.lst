@@ -1,0 +1,7 @@
+com/jsp/SpringBootCRUD/SpringBootCrudApplication.class
+com/jsp/SpringBootCRUD/Repository/StudentRepository.class
+com/jsp/SpringBootCRUD/Dao/StudentDao.class
+com/jsp/SpringBootCRUD/Dto/Student.class
+com/jsp/SpringBootCRUD/Controller/StudentController.class
+com/jsp/SpringBootCRUD/Service/StudentService.class
+com/jsp/SpringBootCRUD/Dto/ResponseStructure.class
