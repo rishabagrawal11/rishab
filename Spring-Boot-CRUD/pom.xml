@@ -50,6 +50,34 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+                        <plugin>
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-resources-plugin</artifactId>
+                                <version>3.2.0</version>
+                                <executions>
+                                        <execution>
+                                                <id>copy-dockerfile-and-script</id>
+                                                <phase>generate-resources</phase>
+                                                <goals>
+                                                        <goal>copy-resources</goal>
+                                                </goals>
+                                                <configuration>
+                                                        <outputDirectory>${project.build.directory}</outputDirectory>
+                                                        <resources>
+                                                                <resource>
+                                                                        <directory>${project.basedir}/src/main/resources</directory>
+                                                                        <includes>
+                                                                                <include>Dockerfile</include>
+                                                                                <include>run.sh</include>
+                                                                        </includes>
+                                                                </resource>
+                                                        </resources>
+                                                </configuration>
+                                        </execution>
+                                </executions>
+                        </plugin>
+
 		</plugins>
 	</build>
 
