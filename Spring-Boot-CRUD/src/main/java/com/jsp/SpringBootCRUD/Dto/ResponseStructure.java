@@ -22,6 +22,6 @@ public class ResponseStructure <T> {
 		return data;
 	}
 	public void setData(T data) {
-		this.data = data
+		this.data = data;
 	}
 }
