@@ -1,5 +1,5 @@
 image:
-  repository: springboot
+  repository: gopish110/springboot
   tag: 4.0.5
   pullPolicy: IfNotPresent
 
