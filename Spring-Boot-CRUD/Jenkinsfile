@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy with Helm') {
             steps {
                 script {
-                    sh 'helm upgrade --install spring-crud-service ./helm-charts'
+                    sh 'helm install spring-crud-service ./spring-app-chart'
                 }
             }
         }
