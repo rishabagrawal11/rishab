@@ -4,7 +4,7 @@ pipeline {
     environment {
         GITHUB_REPO = "https://github.com/gopish12/spring-app-chart.git"
         IMAGE_NAME = "springboot"
-        IMAGE_TAG = "2.0.0"
+        IMAGE_TAG = "3.0.0"
     }
 
     stages {
