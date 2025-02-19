@@ -5,12 +5,14 @@ pipeline {
         GITHUB_REPO = "https://github.com/gopish12/spring-app-chart.git"
         IMAGE_NAME = "springboot"
         IMAGE_TAG = "2.0.0"
+        GITHUB_CREDENTIALS = "GITHUB_TOKEN"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: "${GITHUB_REPO}"
+                git branch: 'main', url: "${GITHUB_REPO}",
+                credentialsId: "${GITHUB_CREDENTIALS}"
             }
         }
 
