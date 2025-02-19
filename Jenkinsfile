@@ -4,7 +4,7 @@ pipeline {
     environment {
         GITHUB_REPO = "https://github.com/gopish12/spring-app-chart.git"
         IMAGE_NAME = "springboot"
-        IMAGE_TAG = "6.0.0"
+        IMAGE_TAG = "2.0.0"
     }
 
     stages {
@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy with Helm') {
             steps {
                 script {
-                    sh 'helm upgrade --install spring-crud-service ./helm-charts'
+                    sh 'helm install spring-crud-service ./spring-app-chart'
                 }
             }
         }
