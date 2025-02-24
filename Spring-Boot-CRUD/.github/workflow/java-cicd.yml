@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main  # Trigger on changes to the main branch
-  pull_request:
-    branches:
-      - main  # Trigger on PRs to the main branch
 
 # Define the jobs in the workflow
 jobs:
@@ -30,8 +27,8 @@ jobs:
         run: mvn clean install -DskipTests=false  # Skips tests during build (can adjust based on needs)
 
       # Step 4: Run unit tests
-      - name: Run tests
-        run: mvn test  # Run the tests using Maven
+      #- name: Run tests
+      #  run: mvn test  # Run the tests using Maven
 
       # Optional Step 5: Build a Docker image (if you want to create a Docker image)
       - name: Build Docker image
