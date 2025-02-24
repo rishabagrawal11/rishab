@@ -31,12 +31,12 @@ jobs:
 
       # Step 3: Build the project using Maven
       - name: Build with Maven
-        run: mvn clean install -DskipTests=true  # Skips tests during build (can adjust based on needs)
-        working-directory: Spring-Boot-CRUD
+        run: |
+        cd Spring-Boot-CRUD
+        mvn clean install -DskipTests=true  # Skips tests during build (can adjust based on needs)
 
       - name: Verify JAR File Exists
         run: |
-          working-directory: Spring-Boot-CRUD
           pwd
           ls -R
       # Optional Step 5: Build a Docker image (if you want to create a Docker image)
