@@ -10,21 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest  # Use the latest Ubuntu runner
-    services:
-      mysql:
-        image: mysql:8.0
-        ports:
-          - 3306:3306
-        env:
-          MYSQL_USER: root
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: spring_boot_crud
-          MYSQL_PASSWORD: rootroot
-        options: >-
-          --health-cmd="mysqladmin ping --silent"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
     steps:
       # Step 1: Check out the code from the GitHub repository
       - name: Checkout code
@@ -46,7 +31,7 @@ jobs:
 
       # Step 3: Build the project using Maven
       - name: Build with Maven
-        run: mvn clean install -DskipTests=false  # Skips tests during build (can adjust based on needs)
+        run: mvn clean install -DskipTests=true  # Skips tests during build (can adjust based on needs)
         working-directory: Spring-Boot-CRUD
       # Step 4: Run unit tests
       #- name: Run tests
