@@ -32,8 +32,8 @@ jobs:
 
       # Step 3: Build the project using Maven
       - name: Build with Maven
-        run: mvn clean install Spring-Boot-CRUD/pom.xml -DskipTests=false  # Skips tests during build (can adjust based on needs)
-
+        run: mvn clean install -DskipTests=false  # Skips tests during build (can adjust based on needs)
+        working-directory: Spring-Boot-CRUD
       # Step 4: Run unit tests
       #- name: Run tests
       #  run: mvn test  # Run the tests using Maven
