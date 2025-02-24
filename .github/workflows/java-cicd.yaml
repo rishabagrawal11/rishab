@@ -41,4 +41,5 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t spring-boot-app .
+          working-directory: Spring-Boot-CRUD
           docker images  # List images for debugging
