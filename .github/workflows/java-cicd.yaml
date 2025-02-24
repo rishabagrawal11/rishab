@@ -33,12 +33,9 @@ jobs:
       - name: Build with Maven
         run: mvn clean install -DskipTests=true  # Skips tests during build (can adjust based on needs)
         working-directory: Spring-Boot-CRUD
-      # Step 4: Run unit tests
-      #- name: Run tests
-      #  run: mvn test  # Run the tests using Maven
-
       # Optional Step 5: Build a Docker image (if you want to create a Docker image)
       - name: Build Docker image
-        run: docker build -t spring-boot-app .
+        run: |
+          docker build -t spring-boot-app .
           working-directory: Spring-Boot-CRUD
 
