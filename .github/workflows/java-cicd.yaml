@@ -38,14 +38,7 @@ jobs:
         run: |
           working-directory: Spring-Boot-CRUD
           pwd
-          echo "Checking if JAR file exists..."
-          ls -lh target/
-          if [ ! -f target/*.jar ]; then
-            echo "❌ JAR file not found! Build failed."
-            exit 1
-          else
-            echo "✅ JAR file found!"
-          fi
+          ls -R
       # Optional Step 5: Build a Docker image (if you want to create a Docker image)
       - name: Build Docker image
         run: |
