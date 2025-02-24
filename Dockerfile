@@ -1,23 +1,10 @@
-# Use the official Maven image to build the application
-FROM maven:3.8.4-openjdk-17-slim AS build
-
-WORKDIR /app
-
-# Copy the pom.xml and download the dependencies
-COPY pom.xml .
-RUN mvn dependency:go-offline
-
-# Copy the source code and build the application
-COPY src ./src
-RUN mvn clean package -DskipTests
-
-# Use OpenJDK to run the application
+# Use a lightweight JDK for runtime
 FROM eclipse-temurin:17-jre
+
 WORKDIR /app
 
-# Copy the built JAR file from the build stage
-COPY --from=build /app/target/*.jar app.jar
+# Copy the built JAR from GitHub Actions (outside Docker)
+COPY target/*.jar app.jar
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
-
