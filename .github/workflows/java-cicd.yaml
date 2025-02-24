@@ -23,7 +23,7 @@ jobs:
           java-version: '17'
           java-package: jdk
           architecture: x64
-          distribution: 'adoptium'   # This is the missing input
+          distribution: 'openjdk'   # This is the missing input
           check-latest: false
           server-id: github
           server-username: GITHUB_ACTOR
