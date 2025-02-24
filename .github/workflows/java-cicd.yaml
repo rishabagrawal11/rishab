@@ -36,6 +36,7 @@ jobs:
 
       - name: Verify JAR File Exists
         run: |
+          working-directory: Spring-Boot-CRUD
           pwd
           echo "Checking if JAR file exists..."
           ls -lh target/
