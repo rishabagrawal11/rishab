@@ -39,7 +39,6 @@ jobs:
 
       # Optional Step 5: Build a Docker image (if you want to create a Docker image)
       - name: Build Docker image
-        run: |
-          docker build -t spring-boot-app .
+        run: docker build -t spring-boot-app .
           working-directory: Spring-Boot-CRUD
           docker images  # List images for debugging
